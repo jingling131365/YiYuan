@@ -1,19 +1,25 @@
 <?php
 // +----------------------------------------------------------------------
-// | 文件: app.php  
+// | 文件: user.php
 // +----------------------------------------------------------------------
-// | 功能: 路由配置                                   
+// | 功能: mysql数据库表model
 // +----------------------------------------------------------------------
 // | 时间: 2024-09-25
 // +----------------------------------------------------------------------
 // | 作者: chengnn
 // +----------------------------------------------------------------------
-use think\facade\Route;
 
-// 获取当前计数
-Route::get('/api/count', 'index/getCount');
+namespace app\model;
 
-// 更新计数，自增或者清零
-Route::post('/api/count', 'index/updateCount');
-// // 获取用户信息
-Route::post('/api/getOpenId', 'user/getOpenId');
+use think\Model;
+
+// User 定义数据库model
+class User extends Model
+{
+    protected $table = 'yiyuan_users';
+    public $id;
+    public $openId;
+    protected $create_time;
+    protected $update_time;
+    
+}
