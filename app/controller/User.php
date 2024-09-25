@@ -25,7 +25,7 @@ class User extends BaseController
      * 获取openid接口
      * @return json
      */
-    #[Method('POST')]
+    #[Method('GET')]
     public function getOpenId($code): Json {
         $appid = 'wx6da454ead77265df';
         $appsecret = 'e9fe96d2f4330e5b4eae52100d4a2b5e';
